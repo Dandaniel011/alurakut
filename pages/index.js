@@ -1,5 +1,6 @@
-import MainGrid from '../src/componentes/MainGrid'
-import Box from '../src/componentes/Box'
+import { MainGrid } from '../src/componentes/MainGrid'
+import styled from "styled-components"
+import { Box } from '../src/componentes/Box'
 export default function Home() {
   return (
   <MainGrid>
