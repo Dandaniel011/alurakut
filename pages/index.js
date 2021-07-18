@@ -3,7 +3,6 @@ import { MainGrid } from '../src/componentes/MainGrid'
 import { Box } from '../src/componentes/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from "../src/lib/alurakutCommons"
 import { ProfileRelationsBoxWrapper } from "../src/componentes/ProfileRelationsBoxWrapper"
-//a
 
 function ProfileSideBar(propriedades) {
   return(
@@ -24,6 +23,30 @@ function ProfileSideBar(propriedades) {
   )
 }
 
+function ProfileRelationsBox(propriedades) {
+  console.log ('oi')
+  return (
+    <ProfileRelationsBoxWrapper>
+      <h2 className="smallTitle">
+        {propriedades.title} ({propriedades.items.length})
+        
+      </h2>
+      <ul>
+        {/* { {seguidores.map((itemAtual) => {
+          return (
+            <li key={itemAtual}>
+              <a href={`https://github.com/${itemAtual}.png`} >
+              <img src={itemAtual.image} />
+              <span>{itemAtual.title}</span>
+              </a>
+            </li>
+          )})}} */}
+      </ul>
+    </ProfileRelationsBoxWrapper>
+    
+  )
+}
+
 export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
     id: '101011101',
@@ -39,6 +62,19 @@ export default function Home() {
     'marcobrunodev',
     'felipefialho'
   ]
+
+const [seguidores, setSeguidores] = React.useState([]);
+React.useEffect(function() {
+  fetch('https://api.github.com/users/peas/followers')
+    .then(function(respostaDoServidor) {
+    return respostaDoServidor.json();
+ })
+ .then(function (respostaCompleta) {
+    setSeguidores(respostaCompleta);
+ })
+},[])
+
+ console.log('seguidore antes do return: ', seguidores);
 
   return (
     <>
@@ -93,9 +129,12 @@ export default function Home() {
     </Box>
       </div>
       <div className="profileRealationsArea" style={{ gridArea: 'profileRealationsArea' }}>
+        <ProfileRelationsBox title="Seguidores" items={seguidores} />
         <ProfileRelationsBoxWrapper>
-        <ul
-        >
+        <h2 className="smallTitle">
+            Comunidades ({comunidades.length})
+          </h2>
+        <ul>
           {comunidades.map((itemAtual) => {
             return (
               <li key={itemAtual.id}>

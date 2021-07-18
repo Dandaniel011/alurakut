@@ -14,11 +14,11 @@ padding: 16px;
   }
 }
 @media(min-width: 860px){
-  max-width: 1110px;
+  max-width: 1260px;
   display: grid;
   grid-template-areas: 
   "profileArea welcomeArea profileRealationsArea";
-  grid-template-columns: 160px 1fr 312px;
+  grid-template-columns: 220px 1fr 384px;
 }
 
 `

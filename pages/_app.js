@@ -8,10 +8,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: sans-serif;
     background-color: #D0E6F6;
+    background-image: url("https://images5.alphacoders.com/100/1002716.jpg") ;
+    background-size: 100% 139%;
   }
 
   #_next {
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   colors: {
-    primary: '#red',
+    primary: 'red',
   },
 }
 
