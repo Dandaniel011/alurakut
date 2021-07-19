@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
     background-color: #D0E6F6;
-    background-image: url("https://images5.alphacoders.com/100/1002716.jpg") ;
-    background-size: 100% 139%;
+    //background-image: url("https://images5.alphacoders.com/100/1002716.jpg") ;
+    //background-size: 100% 139%;
   }
 
   #_next {
